@@ -1,0 +1,6 @@
+id,name,price,category,condition,description,image_folder
+1,自行车,200,交通工具,8成新,捷安特自行车，适合校园通勤,bike_1
+2,课本,50,学习用品,全新,计算机科学导论，未使用,book_1
+3,台灯,30,家居用品,9成新,LED护眼台灯，三档亮度调节,lamp_1
+4,笔记本电脑,1500,电子产品,7成新,联想ThinkPad，i5处理器，8GB内存,laptop_1
+5,篮球,60,运动装备,8成新,耐克标准7号球，适合室外使用,basketball_1 
