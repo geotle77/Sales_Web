@@ -1,1 +1,4 @@
 id,name,price,category,condition,description,image_folder,sold
+1,自行车,200,生活用品,轻微使用,登山自行车，2021年购入,1,false
+2,机械工业出版社,50,书,基本全新,经典黑皮书系列,2,false
+3,电动车,1000,生活用品,轻微磨损,九号电动车，24年购入,3,false

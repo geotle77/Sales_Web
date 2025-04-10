@@ -42,7 +42,7 @@ if (!fs.existsSync(itemsFile)) {
 }
 
 // 存储管理员密码的散列值
-let adminPasswordHash = '$2a$10$H8OVvjwITCZRpzDLtOvdIONg2FRSfkjM0bMtxlqqR.yLRz7dUg/Ta'; // 默认密码: admin123
+let adminPasswordHash = bcrypt.hashSync('admin123', 10);
 
 // 图片上传配置
 const storage = multer.diskStorage({

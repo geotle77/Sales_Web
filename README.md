@@ -8,7 +8,8 @@
 - 按类别浏览和搜索功能
 - 物品详情页展示多张图片
 - 响应式设计，适配各种设备
-- 使用CSV文件作为简易数据库
+- 管理员后台用于添加和管理物品
+- 支持图片上传功能
 
 ## 如何使用
 
@@ -21,7 +22,11 @@ npm install
 ### 启动开发服务器
 
 ```bash
+# 启动前端开发服务器
 npm start
+
+# 启动后端服务器
+node server.js
 ```
 
 ### 构建生产版本
@@ -32,19 +37,31 @@ npm run build
 
 ## 数据结构
 
-项目使用CSV文件存储物品数据，位于`public/data.csv`，格式如下：
+项目使用CSV文件存储物品数据，位于`data/items.csv`，格式如下：
 
 ```
-id,name,price,category,condition,description,image_folder
-1,自行车,200,交通工具,8成新,捷安特自行车，适合校园通勤,bike_1
+id,name,price,category,condition,description,image_folder,sold
+1,自行车,200,生活用品,轻微使用,捷安特自行车，适合校园通勤,1,false
 ```
 
 ## 图片存储
 
-物品图片应放置在`public/images/[image_folder]`目录下，例如ID为1的自行车图片位于：
-- public/images/bike_1/1.jpg
-- public/images/bike_1/2.jpg
-- public/images/bike_1/3.jpg
+项目已从静态展示转变为服务器上传模式：
+
+- 物品图片通过管理员后台上传，存储在`uploads/[id]`目录下
+- 每个物品有自己的图片文件夹，文件夹名与物品ID相同
+- 上传的图片会自动重命名为唯一文件名
+
+示例路径：
+- uploads/1/1744268938046-544540509.jpg
+
+## 管理员功能
+
+- 默认管理员密码: admin123
+- 登录后可添加、编辑、删除物品
+- 支持上传多张物品图片
+- 可以标记物品为已售出/在售
+- 支持修改管理员密码
 
 ## 自定义
 
@@ -53,4 +70,4 @@ id,name,price,category,condition,description,image_folder
 - `src/App.js`: 主应用逻辑
 - `src/components`: React组件
 - `src/styles`: CSS样式
-- `public/data.csv`: 物品数据 
+- `server.js`: 服务器配置和API实现 
