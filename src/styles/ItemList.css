@@ -54,6 +54,7 @@
 .item-image {
   height: 200px;
   overflow: hidden;
+  position: relative;
 }
 
 .item-image img {
@@ -77,6 +78,11 @@
 .item-info h3 {
   margin: 0 0 10px;
   font-size: 1.2rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .item-price {
@@ -89,6 +95,7 @@
 .item-condition {
   color: #7f8c8d;
   margin-bottom: 5px;
+  font-size: 0.9rem;
 }
 
 .item-category {
@@ -133,23 +140,46 @@
 @media (max-width: 992px) {
   .items-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .item-image {
+    height: 180px;
   }
 }
 
 @media (max-width: 576px) {
   .items-grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
   
   .item-image {
-    height: 150px;
+    height: 200px;
   }
   
   .item-info {
-    padding: 10px;
+    padding: 12px;
   }
   
   .item-info h3 {
-    font-size: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .item-price {
+    font-size: 1.2rem;
+  }
+  
+  .list-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .no-items {
+    padding: 30px 15px;
+  }
+  
+  .no-items h2 {
+    font-size: 1.2rem;
   }
 } 
